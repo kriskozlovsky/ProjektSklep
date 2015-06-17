@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditOrderDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.EditOrderDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,28 +15,28 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditOrderDTOLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{orderDTOController.selected.id}" title="#{bundle.EditOrderDTOTitle_id}" />
-                    <h:outputLabel value="#{bundle.EditOrderDTOLabel_orderClient}" for="orderClient" />
-                    <h:selectOneMenu id="orderClient" value="#{orderDTOController.selected.orderClient}" title="#{bundle.EditOrderDTOTitle_orderClient}" >
+                    <h:outputLabel value="#{crud.EditOrderDTOLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{orderDTOController.selected.id}" title="#{crud.EditOrderDTOTitle_id}" />
+                    <h:outputLabel value="#{crud.EditOrderDTOLabel_orderClient}" for="orderClient" />
+                    <h:selectOneMenu id="orderClient" value="#{orderDTOController.selected.orderClient}" title="#{crud.EditOrderDTOTitle_orderClient}" >
                         <f:selectItems value="#{clientDTOController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditOrderDTOLabel_delivery}" for="delivery" />
-                    <h:selectOneMenu id="delivery" value="#{orderDTOController.selected.delivery}" title="#{bundle.EditOrderDTOTitle_delivery}" >
+                    <h:outputLabel value="#{crud.EditOrderDTOLabel_delivery}" for="delivery" />
+                    <h:selectOneMenu id="delivery" value="#{orderDTOController.selected.delivery}" title="#{crud.EditOrderDTOTitle_delivery}" >
                         <f:selectItems value="#{deliveryMethodDTOController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditOrderDTOLabel_submitedOn}" for="submitedOn" />
-                    <h:inputText id="submitedOn" value="#{orderDTOController.selected.submitedOn}" title="#{bundle.EditOrderDTOTitle_submitedOn}" />
+                    <h:outputLabel value="#{crud.EditOrderDTOLabel_submitedOn}" for="submitedOn" />
+                    <h:inputText id="submitedOn" value="#{orderDTOController.selected.submitedOn}" title="#{crud.EditOrderDTOTitle_submitedOn}" />
                 </h:panelGrid>
-                <h:commandLink action="#{orderDTOController.update}" value="#{bundle.EditOrderDTOSaveLink}"/>
+                <h:commandLink action="#{orderDTOController.update}" value="#{crud.EditOrderDTOSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditOrderDTOViewLink}"/>
+                <h:link outcome="View" value="#{crud.EditOrderDTOViewLink}"/>
                 <br />
-                <h:commandLink action="#{orderDTOController.prepareList}" value="#{bundle.EditOrderDTOShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{orderDTOController.prepareList}" value="#{crud.EditOrderDTOShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditOrderDTOIndexLink}" />
+                <h:link outcome="/index" value="#{crud.EditOrderDTOIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

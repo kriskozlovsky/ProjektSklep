@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewEmployeeDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.ViewEmployeeDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,21 +15,31 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewEmployeeDTOLabel_id}"/>
-                    <h:outputText value="#{employeeDTOController.selected.id}" title="#{bundle.ViewEmployeeDTOTitle_id}"/>
+                    <h:outputText value="#{crud.ViewEmployeeDTOLabel_id}"/>
+                    <h:outputText value="#{employeeDTOController.selected.id}" title="#{crud.ViewEmployeeDTOTitle_id}"/>
+                    <h:outputText value="#{crud.ViewEmployeeDTOLabel_name}"/>
+                    <h:outputText value="#{employeeDTOController.selected.name}" title="#{crud.ViewEmployeeDTOTitle_name}"/>
+                    <h:outputText value="#{crud.ViewEmployeeDTOLabel_surname}"/>
+                    <h:outputText value="#{employeeDTOController.selected.surname}" title="#{crud.ViewEmployeeDTOTitle_surname}"/>
+                    <h:outputText value="#{crud.ViewEmployeeDTOLabel_email}"/>
+                    <h:outputText value="#{employeeDTOController.selected.email}" title="#{crud.ViewEmployeeDTOTitle_email}"/>
+                    <h:outputText value="#{crud.ViewEmployeeDTOLabel_login}"/>
+                    <h:outputText value="#{employeeDTOController.selected.login}" title="#{crud.ViewEmployeeDTOTitle_login}"/>
+                    <h:outputText value="#{crud.ViewEmployeeDTOLabel_password}"/>
+                    <h:outputText value="#{employeeDTOController.selected.password}" title="#{crud.ViewEmployeeDTOTitle_password}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{employeeDTOController.destroyAndView}" value="#{bundle.ViewEmployeeDTODestroyLink}"/>
+                <h:commandLink action="#{employeeDTOController.destroyAndView}" value="#{crud.ViewEmployeeDTODestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewEmployeeDTOEditLink}"/>
+                <h:link outcome="Edit" value="#{crud.ViewEmployeeDTOEditLink}"/>
                 <br />
-                <h:commandLink action="#{employeeDTOController.prepareCreate}" value="#{bundle.ViewEmployeeDTOCreateLink}" />
+                <h:commandLink action="#{employeeDTOController.prepareCreate}" value="#{crud.ViewEmployeeDTOCreateLink}" />
                 <br />
-                <h:commandLink action="#{employeeDTOController.prepareList}" value="#{bundle.ViewEmployeeDTOShowAllLink}"/>
+                <h:commandLink action="#{employeeDTOController.prepareList}" value="#{crud.ViewEmployeeDTOShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewEmployeeDTOIndexLink}"/>
+                <h:link outcome="/index" value="#{crud.ViewEmployeeDTOIndexLink}"/>
 
             </h:form>
         </ui:define>

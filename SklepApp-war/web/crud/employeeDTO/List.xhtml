@@ -7,42 +7,72 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListEmployeeDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.ListEmployeeDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListEmployeeDTOEmpty}" rendered="#{employeeDTOController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="#{crud.ListEmployeeDTOEmpty}" rendered="#{employeeDTOController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{employeeDTOController.items.rowCount > 0}">
                     <h:outputText value="#{employeeDTOController.pagination.pageFirstItem + 1}..#{employeeDTOController.pagination.pageLastItem + 1}/#{employeeDTOController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{employeeDTOController.previous}" value="#{bundle.Previous} #{employeeDTOController.pagination.pageSize}" rendered="#{employeeDTOController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{employeeDTOController.next}" value="#{bundle.Next} #{employeeDTOController.pagination.pageSize}" rendered="#{employeeDTOController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink action="#{employeeDTOController.previous}" value="#{crud.Previous} #{employeeDTOController.pagination.pageSize}" rendered="#{employeeDTOController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{employeeDTOController.next}" value="#{crud.Next} #{employeeDTOController.pagination.pageSize}" rendered="#{employeeDTOController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{employeeDTOController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListEmployeeDTOTitle_id}"/>
+                                <h:outputText value="#{crud.ListEmployeeDTOTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="#{crud.ListEmployeeDTOTitle_name}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.name}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{crud.ListEmployeeDTOTitle_surname}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.surname}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{crud.ListEmployeeDTOTitle_email}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.email}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{crud.ListEmployeeDTOTitle_login}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.login}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{crud.ListEmployeeDTOTitle_password}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.password}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{employeeDTOController.prepareView}" value="#{bundle.ListEmployeeDTOViewLink}"/>
+                            <h:commandLink action="#{employeeDTOController.prepareView}" value="#{crud.ListEmployeeDTOViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{employeeDTOController.prepareEdit}" value="#{bundle.ListEmployeeDTOEditLink}"/>
+                            <h:commandLink action="#{employeeDTOController.prepareEdit}" value="#{crud.ListEmployeeDTOEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{employeeDTOController.destroy}" value="#{bundle.ListEmployeeDTODestroyLink}"/>
+                            <h:commandLink action="#{employeeDTOController.destroy}" value="#{crud.ListEmployeeDTODestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{employeeDTOController.prepareCreate}" value="#{bundle.ListEmployeeDTOCreateLink}"/>
+                <h:commandLink action="#{employeeDTOController.prepareCreate}" value="#{crud.ListEmployeeDTOCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListEmployeeDTOIndexLink}"/>
+                <h:link outcome="/index" value="#{crud.ListEmployeeDTOIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

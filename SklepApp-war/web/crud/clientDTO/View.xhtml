@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewClientDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.ViewClientDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,21 +15,31 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewClientDTOLabel_id}"/>
-                    <h:outputText value="#{clientDTOController.selected.id}" title="#{bundle.ViewClientDTOTitle_id}"/>
+                    <h:outputText value="#{crud.ViewClientDTOLabel_id}"/>
+                    <h:outputText value="#{clientDTOController.selected.id}" title="#{crud.ViewClientDTOTitle_id}"/>
+                    <h:outputText value="#{crud.ViewClientDTOLabel_name}"/>
+                    <h:outputText value="#{clientDTOController.selected.name}" title="#{crud.ViewClientDTOTitle_name}"/>
+                    <h:outputText value="#{crud.ViewClientDTOLabel_surname}"/>
+                    <h:outputText value="#{clientDTOController.selected.surname}" title="#{crud.ViewClientDTOTitle_surname}"/>
+                    <h:outputText value="#{crud.ViewClientDTOLabel_email}"/>
+                    <h:outputText value="#{clientDTOController.selected.email}" title="#{crud.ViewClientDTOTitle_email}"/>
+                    <h:outputText value="#{crud.ViewClientDTOLabel_login}"/>
+                    <h:outputText value="#{clientDTOController.selected.login}" title="#{crud.ViewClientDTOTitle_login}"/>
+                    <h:outputText value="#{crud.ViewClientDTOLabel_password}"/>
+                    <h:outputText value="#{clientDTOController.selected.password}" title="#{crud.ViewClientDTOTitle_password}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{clientDTOController.destroyAndView}" value="#{bundle.ViewClientDTODestroyLink}"/>
+                <h:commandLink action="#{clientDTOController.destroyAndView}" value="#{crud.ViewClientDTODestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewClientDTOEditLink}"/>
+                <h:link outcome="Edit" value="#{crud.ViewClientDTOEditLink}"/>
                 <br />
-                <h:commandLink action="#{clientDTOController.prepareCreate}" value="#{bundle.ViewClientDTOCreateLink}" />
+                <h:commandLink action="#{clientDTOController.prepareCreate}" value="#{crud.ViewClientDTOCreateLink}" />
                 <br />
-                <h:commandLink action="#{clientDTOController.prepareList}" value="#{bundle.ViewClientDTOShowAllLink}"/>
+                <h:commandLink action="#{clientDTOController.prepareList}" value="#{crud.ViewClientDTOShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewClientDTOIndexLink}"/>
+                <h:link outcome="/index" value="#{crud.ViewClientDTOIndexLink}"/>
 
             </h:form>
         </ui:define>

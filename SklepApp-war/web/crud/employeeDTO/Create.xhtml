@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateEmployeeDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.CreateEmployeeDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,17 +15,27 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateEmployeeDTOLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{employeeDTOController.selected.id}" title="#{bundle.CreateEmployeeDTOTitle_id}" />
+                    <h:outputLabel value="#{crud.CreateEmployeeDTOLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{employeeDTOController.selected.id}" title="#{crud.CreateEmployeeDTOTitle_id}" />
+                    <h:outputLabel value="#{crud.CreateEmployeeDTOLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{employeeDTOController.selected.name}" title="#{crud.CreateEmployeeDTOTitle_name}" />
+                    <h:outputLabel value="#{crud.CreateEmployeeDTOLabel_surname}" for="surname" />
+                    <h:inputText id="surname" value="#{employeeDTOController.selected.surname}" title="#{crud.CreateEmployeeDTOTitle_surname}" />
+                    <h:outputLabel value="#{crud.CreateEmployeeDTOLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{employeeDTOController.selected.email}" title="#{crud.CreateEmployeeDTOTitle_email}" />
+                    <h:outputLabel value="#{crud.CreateEmployeeDTOLabel_login}" for="login" />
+                    <h:inputText id="login" value="#{employeeDTOController.selected.login}" title="#{crud.CreateEmployeeDTOTitle_login}" />
+                    <h:outputLabel value="#{crud.CreateEmployeeDTOLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{employeeDTOController.selected.password}" title="#{crud.CreateEmployeeDTOTitle_password}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{employeeDTOController.create}" value="#{bundle.CreateEmployeeDTOSaveLink}" />
+                <h:commandLink action="#{employeeDTOController.create}" value="#{crud.CreateEmployeeDTOSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{employeeDTOController.prepareList}" value="#{bundle.CreateEmployeeDTOShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{employeeDTOController.prepareList}" value="#{crud.CreateEmployeeDTOShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateEmployeeDTOIndexLink}"/>
+                <h:link outcome="/index" value="#{crud.CreateEmployeeDTOIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

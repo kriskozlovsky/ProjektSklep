@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewOrderItemDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.ViewOrderItemDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,27 +15,27 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewOrderItemDTOLabel_id}"/>
-                    <h:outputText value="#{orderItemDTOController.selected.id}" title="#{bundle.ViewOrderItemDTOTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewOrderItemDTOLabel_product}"/>
-                    <h:outputText value="#{orderItemDTOController.selected.product}" title="#{bundle.ViewOrderItemDTOTitle_product}"/>
-                    <h:outputText value="#{bundle.ViewOrderItemDTOLabel_amount}"/>
-                    <h:outputText value="#{orderItemDTOController.selected.amount}" title="#{bundle.ViewOrderItemDTOTitle_amount}"/>
-                    <h:outputText value="#{bundle.ViewOrderItemDTOLabel_order}"/>
-                    <h:outputText value="#{orderItemDTOController.selected.order}" title="#{bundle.ViewOrderItemDTOTitle_order}"/>
+                    <h:outputText value="#{crud.ViewOrderItemDTOLabel_id}"/>
+                    <h:outputText value="#{orderItemDTOController.selected.id}" title="#{crud.ViewOrderItemDTOTitle_id}"/>
+                    <h:outputText value="#{crud.ViewOrderItemDTOLabel_product}"/>
+                    <h:outputText value="#{orderItemDTOController.selected.product}" title="#{crud.ViewOrderItemDTOTitle_product}"/>
+                    <h:outputText value="#{crud.ViewOrderItemDTOLabel_amount}"/>
+                    <h:outputText value="#{orderItemDTOController.selected.amount}" title="#{crud.ViewOrderItemDTOTitle_amount}"/>
+                    <h:outputText value="#{crud.ViewOrderItemDTOLabel_order}"/>
+                    <h:outputText value="#{orderItemDTOController.selected.order}" title="#{crud.ViewOrderItemDTOTitle_order}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{orderItemDTOController.destroyAndView}" value="#{bundle.ViewOrderItemDTODestroyLink}"/>
+                <h:commandLink action="#{orderItemDTOController.destroyAndView}" value="#{crud.ViewOrderItemDTODestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewOrderItemDTOEditLink}"/>
+                <h:link outcome="Edit" value="#{crud.ViewOrderItemDTOEditLink}"/>
                 <br />
-                <h:commandLink action="#{orderItemDTOController.prepareCreate}" value="#{bundle.ViewOrderItemDTOCreateLink}" />
+                <h:commandLink action="#{orderItemDTOController.prepareCreate}" value="#{crud.ViewOrderItemDTOCreateLink}" />
                 <br />
-                <h:commandLink action="#{orderItemDTOController.prepareList}" value="#{bundle.ViewOrderItemDTOShowAllLink}"/>
+                <h:commandLink action="#{orderItemDTOController.prepareList}" value="#{crud.ViewOrderItemDTOShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewOrderItemDTOIndexLink}"/>
+                <h:link outcome="/index" value="#{crud.ViewOrderItemDTOIndexLink}"/>
 
             </h:form>
         </ui:define>

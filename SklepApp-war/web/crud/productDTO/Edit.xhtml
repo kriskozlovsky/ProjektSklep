@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditProductDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.EditProductDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,22 +15,22 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditProductDTOLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{productDTOController.selected.id}" title="#{bundle.EditProductDTOTitle_id}" />
-                    <h:outputLabel value="#{bundle.EditProductDTOLabel_name}" for="name" />
-                    <h:inputText id="name" value="#{productDTOController.selected.name}" title="#{bundle.EditProductDTOTitle_name}" />
-                    <h:outputLabel value="#{bundle.EditProductDTOLabel_price}" for="price" />
-                    <h:inputText id="price" value="#{productDTOController.selected.price}" title="#{bundle.EditProductDTOTitle_price}" />
+                    <h:outputLabel value="#{crud.EditProductDTOLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{productDTOController.selected.id}" title="#{crud.EditProductDTOTitle_id}" />
+                    <h:outputLabel value="#{crud.EditProductDTOLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{productDTOController.selected.name}" title="#{crud.EditProductDTOTitle_name}" />
+                    <h:outputLabel value="#{crud.EditProductDTOLabel_price}" for="price" />
+                    <h:inputText id="price" value="#{productDTOController.selected.price}" title="#{crud.EditProductDTOTitle_price}" />
                 </h:panelGrid>
-                <h:commandLink action="#{productDTOController.update}" value="#{bundle.EditProductDTOSaveLink}"/>
+                <h:commandLink action="#{productDTOController.update}" value="#{crud.EditProductDTOSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditProductDTOViewLink}"/>
+                <h:link outcome="View" value="#{crud.EditProductDTOViewLink}"/>
                 <br />
-                <h:commandLink action="#{productDTOController.prepareList}" value="#{bundle.EditProductDTOShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{productDTOController.prepareList}" value="#{crud.EditProductDTOShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditProductDTOIndexLink}" />
+                <h:link outcome="/index" value="#{crud.EditProductDTOIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateProductDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.CreateProductDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,21 +15,21 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProductDTOLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{productDTOController.selected.id}" title="#{bundle.CreateProductDTOTitle_id}" />
-                    <h:outputLabel value="#{bundle.CreateProductDTOLabel_name}" for="name" />
-                    <h:inputText id="name" value="#{productDTOController.selected.name}" title="#{bundle.CreateProductDTOTitle_name}" />
-                    <h:outputLabel value="#{bundle.CreateProductDTOLabel_price}" for="price" />
-                    <h:inputText id="price" value="#{productDTOController.selected.price}" title="#{bundle.CreateProductDTOTitle_price}" />
+                    <h:outputLabel value="#{crud.CreateProductDTOLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{productDTOController.selected.id}" title="#{crud.CreateProductDTOTitle_id}" />
+                    <h:outputLabel value="#{crud.CreateProductDTOLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{productDTOController.selected.name}" title="#{crud.CreateProductDTOTitle_name}" />
+                    <h:outputLabel value="#{crud.CreateProductDTOLabel_price}" for="price" />
+                    <h:inputText id="price" value="#{productDTOController.selected.price}" title="#{crud.CreateProductDTOTitle_price}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{productDTOController.create}" value="#{bundle.CreateProductDTOSaveLink}" />
+                <h:commandLink action="#{productDTOController.create}" value="#{crud.CreateProductDTOSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{productDTOController.prepareList}" value="#{bundle.CreateProductDTOShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{productDTOController.prepareList}" value="#{crud.CreateProductDTOShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProductDTOIndexLink}"/>
+                <h:link outcome="/index" value="#{crud.CreateProductDTOIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditClientDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.EditClientDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,18 +15,28 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditClientDTOLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{clientDTOController.selected.id}" title="#{bundle.EditClientDTOTitle_id}" />
+                    <h:outputLabel value="#{crud.EditClientDTOLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{clientDTOController.selected.id}" title="#{crud.EditClientDTOTitle_id}" />
+                    <h:outputLabel value="#{crud.EditClientDTOLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{clientDTOController.selected.name}" title="#{crud.EditClientDTOTitle_name}" />
+                    <h:outputLabel value="#{crud.EditClientDTOLabel_surname}" for="surname" />
+                    <h:inputText id="surname" value="#{clientDTOController.selected.surname}" title="#{crud.EditClientDTOTitle_surname}" />
+                    <h:outputLabel value="#{crud.EditClientDTOLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{clientDTOController.selected.email}" title="#{crud.EditClientDTOTitle_email}" />
+                    <h:outputLabel value="#{crud.EditClientDTOLabel_login}" for="login" />
+                    <h:inputText id="login" value="#{clientDTOController.selected.login}" title="#{crud.EditClientDTOTitle_login}" />
+                    <h:outputLabel value="#{crud.EditClientDTOLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{clientDTOController.selected.password}" title="#{crud.EditClientDTOTitle_password}" />
                 </h:panelGrid>
-                <h:commandLink action="#{clientDTOController.update}" value="#{bundle.EditClientDTOSaveLink}"/>
+                <h:commandLink action="#{clientDTOController.update}" value="#{crud.EditClientDTOSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditClientDTOViewLink}"/>
+                <h:link outcome="View" value="#{crud.EditClientDTOViewLink}"/>
                 <br />
-                <h:commandLink action="#{clientDTOController.prepareList}" value="#{bundle.EditClientDTOShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{clientDTOController.prepareList}" value="#{crud.EditClientDTOShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditClientDTOIndexLink}" />
+                <h:link outcome="/index" value="#{crud.EditClientDTOIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

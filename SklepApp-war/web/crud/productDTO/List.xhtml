@@ -7,34 +7,34 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListProductDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.ListProductDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListProductDTOEmpty}" rendered="#{productDTOController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="#{crud.ListProductDTOEmpty}" rendered="#{productDTOController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{productDTOController.items.rowCount > 0}">
                     <h:outputText value="#{productDTOController.pagination.pageFirstItem + 1}..#{productDTOController.pagination.pageLastItem + 1}/#{productDTOController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{productDTOController.previous}" value="#{bundle.Previous} #{productDTOController.pagination.pageSize}" rendered="#{productDTOController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{productDTOController.next}" value="#{bundle.Next} #{productDTOController.pagination.pageSize}" rendered="#{productDTOController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink action="#{productDTOController.previous}" value="#{crud.Previous} #{productDTOController.pagination.pageSize}" rendered="#{productDTOController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{productDTOController.next}" value="#{crud.Next} #{productDTOController.pagination.pageSize}" rendered="#{productDTOController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{productDTOController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProductDTOTitle_id}"/>
+                                <h:outputText value="#{crud.ListProductDTOTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProductDTOTitle_name}"/>
+                                <h:outputText value="#{crud.ListProductDTOTitle_name}"/>
                             </f:facet>
                             <h:outputText value="#{item.name}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProductDTOTitle_price}"/>
+                                <h:outputText value="#{crud.ListProductDTOTitle_price}"/>
                             </f:facet>
                             <h:outputText value="#{item.price}"/>
                         </h:column>
@@ -42,19 +42,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{productDTOController.prepareView}" value="#{bundle.ListProductDTOViewLink}"/>
+                            <h:commandLink action="#{productDTOController.prepareView}" value="#{crud.ListProductDTOViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{productDTOController.prepareEdit}" value="#{bundle.ListProductDTOEditLink}"/>
+                            <h:commandLink action="#{productDTOController.prepareEdit}" value="#{crud.ListProductDTOEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{productDTOController.destroy}" value="#{bundle.ListProductDTODestroyLink}"/>
+                            <h:commandLink action="#{productDTOController.destroy}" value="#{crud.ListProductDTODestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{productDTOController.prepareCreate}" value="#{bundle.ListProductDTOCreateLink}"/>
+                <h:commandLink action="#{productDTOController.prepareCreate}" value="#{crud.ListProductDTOCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListProductDTOIndexLink}"/>
+                <h:link outcome="/index" value="#{crud.ListProductDTOIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

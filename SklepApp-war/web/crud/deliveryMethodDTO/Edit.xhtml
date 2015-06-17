@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditDeliveryMethodDTOTitle}"></h:outputText>
+            <h:outputText value="#{crud.EditDeliveryMethodDTOTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,22 +15,22 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditDeliveryMethodDTOLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{deliveryMethodDTOController.selected.id}" title="#{bundle.EditDeliveryMethodDTOTitle_id}" />
-                    <h:outputLabel value="#{bundle.EditDeliveryMethodDTOLabel_name}" for="name" />
-                    <h:inputText id="name" value="#{deliveryMethodDTOController.selected.name}" title="#{bundle.EditDeliveryMethodDTOTitle_name}" />
-                    <h:outputLabel value="#{bundle.EditDeliveryMethodDTOLabel_cost}" for="cost" />
-                    <h:inputText id="cost" value="#{deliveryMethodDTOController.selected.cost}" title="#{bundle.EditDeliveryMethodDTOTitle_cost}" />
+                    <h:outputLabel value="#{crud.EditDeliveryMethodDTOLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{deliveryMethodDTOController.selected.id}" title="#{crud.EditDeliveryMethodDTOTitle_id}" />
+                    <h:outputLabel value="#{crud.EditDeliveryMethodDTOLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{deliveryMethodDTOController.selected.name}" title="#{crud.EditDeliveryMethodDTOTitle_name}" />
+                    <h:outputLabel value="#{crud.EditDeliveryMethodDTOLabel_cost}" for="cost" />
+                    <h:inputText id="cost" value="#{deliveryMethodDTOController.selected.cost}" title="#{crud.EditDeliveryMethodDTOTitle_cost}" />
                 </h:panelGrid>
-                <h:commandLink action="#{deliveryMethodDTOController.update}" value="#{bundle.EditDeliveryMethodDTOSaveLink}"/>
+                <h:commandLink action="#{deliveryMethodDTOController.update}" value="#{crud.EditDeliveryMethodDTOSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditDeliveryMethodDTOViewLink}"/>
+                <h:link outcome="View" value="#{crud.EditDeliveryMethodDTOViewLink}"/>
                 <br />
-                <h:commandLink action="#{deliveryMethodDTOController.prepareList}" value="#{bundle.EditDeliveryMethodDTOShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{deliveryMethodDTOController.prepareList}" value="#{crud.EditDeliveryMethodDTOShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditDeliveryMethodDTOIndexLink}" />
+                <h:link outcome="/index" value="#{crud.EditDeliveryMethodDTOIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>
