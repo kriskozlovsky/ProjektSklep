@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateOrderItemDTOTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateOrderItemDTOLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{orderItemDTOController.selected.id}" title="#{bundle.CreateOrderItemDTOTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreateOrderItemDTOLabel_product}" for="product" />
+                    <h:selectOneMenu id="product" value="#{orderItemDTOController.selected.product}" title="#{bundle.CreateOrderItemDTOTitle_product}" >
+                        <f:selectItems value="#{productDTOController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateOrderItemDTOLabel_amount}" for="amount" />
+                    <h:inputText id="amount" value="#{orderItemDTOController.selected.amount}" title="#{bundle.CreateOrderItemDTOTitle_amount}" />
+                    <h:outputLabel value="#{bundle.CreateOrderItemDTOLabel_order}" for="order" />
+                    <h:selectOneMenu id="order" value="#{orderItemDTOController.selected.order}" title="#{bundle.CreateOrderItemDTOTitle_order}" >
+                        <f:selectItems value="#{orderDTOController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{orderItemDTOController.create}" value="#{bundle.CreateOrderItemDTOSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{orderItemDTOController.prepareList}" value="#{bundle.CreateOrderItemDTOShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateOrderItemDTOIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListOrderDTOTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListOrderDTOEmpty}" rendered="#{orderDTOController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{orderDTOController.items.rowCount > 0}">
+                    <h:outputText value="#{orderDTOController.pagination.pageFirstItem + 1}..#{orderDTOController.pagination.pageLastItem + 1}/#{orderDTOController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{orderDTOController.previous}" value="#{bundle.Previous} #{orderDTOController.pagination.pageSize}" rendered="#{orderDTOController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{orderDTOController.next}" value="#{bundle.Next} #{orderDTOController.pagination.pageSize}" rendered="#{orderDTOController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{orderDTOController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrderDTOTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrderDTOTitle_orderClient}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.orderClient}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrderDTOTitle_delivery}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.delivery}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrderDTOTitle_submitedOn}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.submitedOn}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{orderDTOController.prepareView}" value="#{bundle.ListOrderDTOViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{orderDTOController.prepareEdit}" value="#{bundle.ListOrderDTOEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{orderDTOController.destroy}" value="#{bundle.ListOrderDTODestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{orderDTOController.prepareCreate}" value="#{bundle.ListOrderDTOCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListOrderDTOIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
