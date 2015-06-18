@@ -15,18 +15,27 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{crud.CreateClientDTOLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{clientDTOController.selected.id}" title="#{crud.CreateClientDTOTitle_id}" />
-                    <h:outputLabel value="#{crud.CreateClientDTOLabel_name}" for="name" />
-                    <h:inputText id="name" value="#{clientDTOController.selected.name}" title="#{crud.CreateClientDTOTitle_name}" />
-                    <h:outputLabel value="#{crud.CreateClientDTOLabel_surname}" for="surname" />
-                    <h:inputText id="surname" value="#{clientDTOController.selected.surname}" title="#{crud.CreateClientDTOTitle_surname}" />
-                    <h:outputLabel value="#{crud.CreateClientDTOLabel_email}" for="email" />
-                    <h:inputText id="email" value="#{clientDTOController.selected.email}" title="#{crud.CreateClientDTOTitle_email}" />
-                    <h:outputLabel value="#{crud.CreateClientDTOLabel_login}" for="login" />
+                    <h:outputLabel value="Login: " for="login" />
                     <h:inputText id="login" value="#{clientDTOController.selected.login}" title="#{crud.CreateClientDTOTitle_login}" />
-                    <h:outputLabel value="#{crud.CreateClientDTOLabel_password}" for="password" />
-                    <h:inputText id="password" value="#{clientDTOController.selected.password}" title="#{crud.CreateClientDTOTitle_password}" />
+                    <h:outputLabel value="Hasło: " for="password" />
+                    <h:inputSecret id="password" value="#{clientDTOController.selected.password}" title="#{crud.CreateClientDTOTitle_password}" />
+                    
+                </h:panelGrid>
+                <br/>
+                <h3>Adres:</h3>
+                <h:panelGrid columns="2">              
+                    <h:outputLabel value="Imię: " for="name" />
+                    <h:inputText id="name" value="#{clientDTOController.selected.name}" title="#{crud.CreateClientDTOTitle_name}" />
+                    <h:outputLabel value="Nazwisko: " for="surname" />
+                    <h:inputText id="surname" value="#{clientDTOController.selected.surname}" title="#{crud.CreateClientDTOTitle_surname}" />
+                    <h:outputLabel value="E-mail: " for="email" />
+                    <h:inputText id="email" value="#{clientDTOController.selected.email}" title="#{crud.CreateClientDTOTitle_email}" />
+                    <h:outputLabel value="Ulica i numer:" for="ulica" />
+                    <h:inputText id="ulica" value="#{clientDTOController.selected.address.streetLine}" title="ulica" />
+                    <h:outputLabel value="Miasto:" for="miasto" />
+                    <h:inputText id="miasto" value="#{clientDTOController.selected.address.city}" title="miasto" />
+                    <h:outputLabel value="Kod pocztowy:" for="kod" />
+                    <h:inputText id="kod" value="#{clientDTOController.selected.address.zipCode}" title="kod" />
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{clientDTOController.create}" value="#{crud.CreateClientDTOSaveLink}" />

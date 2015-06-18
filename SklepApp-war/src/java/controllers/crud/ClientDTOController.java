@@ -4,6 +4,7 @@ import db.model.ClientDTO;
 import controllers.crud.util.JsfUtil;
 import controllers.crud.util.PaginationHelper;
 import db.ejb.ClientDTOFacade;
+import db.model.AddressEmbedable;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -75,6 +76,7 @@ public class ClientDTOController implements Serializable {
 
     public String prepareCreate() {
         current = new ClientDTO();
+        current.setAddress(new AddressEmbedable());
         selectedItemIndex = -1;
         return "Create";
     }

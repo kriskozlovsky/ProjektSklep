@@ -124,4 +124,25 @@ public class ClientDTO{
     public void setPassword(String password) {
         this.password = password;
     }
+
+    /**
+     * @return the address
+     */
+    public AddressEmbedable getAddress() {
+        return address;
+    }
+
+    /**
+     * @param address the address to set
+     */
+    public void setAddress(AddressEmbedable address) {
+        this.address = address;
+    }
+
+    /**
+     * @return the orders
+     */
+    public List<OrderDTO> getOrders() {
+        return orders;
+    }
 }
