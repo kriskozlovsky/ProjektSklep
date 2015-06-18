@@ -9,4 +9,5 @@
    * Password" = "app"
    Jeśli brak to stwórz
  2. Uruchom serwer JavaDB
- 3. Jeśli wystąpią błędy w kompilacji możesz chcieć najpierw skompilować modół ejb
+ 3. Jeśli wystąpią błędy w kompilacji możesz chcieć najpierw skompilować moduł ejb
+ 4. Podczas odpalania ważne jest by mieć projekt główny projekt podświetlony.
